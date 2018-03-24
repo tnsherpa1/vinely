@@ -1,0 +1,2 @@
+--Molnar Family
+insert into wines(title, region, kind, price, description, qty) values ('Molnar Family Chardonnay', 'Napa Valley', 'Chardonnay', 26.99, 'This is a great value for a small batch, estate grown Carneros Chardonnay, a region in between Napa Valley and Sonoma County that makes exceptional wine from this grape. Aromas burst with apples, lemons, tropical fruits, cream soda, and vanilla, complemented by a hint of minerality. The palate is rich and full with honeydew melon and cr?me brulee, balanced by refreshing acidity.', '50')
