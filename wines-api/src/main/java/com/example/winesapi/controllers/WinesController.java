@@ -16,4 +16,9 @@ public class WinesController {
     public Iterable<Wine> findAllWines() {
         return wineRepository.findAll();
     }
+
+    @PostMapping("/wines")
+    public Wine createNewWine(@RequestBody Wine newWine) {
+        return wineRepository.save(newWine);
+    }
 }
