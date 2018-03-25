@@ -33,11 +33,11 @@ services:
     volumes:
       - ./wines-api:/app
     depends_on:
-      - eureka 
+      - eureka
     command: './gradlew bootRun'
     environment:
       - GRADLE_USER_HOME=cache
-      - SPRING_PROFILES_ACTIVE=dev   
+      - SPRING_PROFILES_ACTIVE=dev
   users-api:
     image: anapsix/alpine-java:8_jdk_unlimited
     ports:
@@ -46,7 +46,7 @@ services:
     volumes:
       - ./users-api:/app
     depends_on:
-      - eureka 
+      - eureka
     command: './gradlew bootRun'
     environment:
       - GRADLE_USER_HOME=cache
@@ -59,3 +59,13 @@ services:
      - POSTGRES_PASSWORD=password
      - POSTGRES_USER=postgres
      - POSTGRES_DB=vinelydev
+  reactdev:
+    image: 'node:8'
+    ports:
+      - '3000:3000'
+    working_dir: /app
+    volumes:
+      - ./vinely-ui:/app
+    command: 'npm start'
+    depends_on:
+      - api-gateway
