@@ -5,7 +5,7 @@ import com.example.winesapi.respositories.WineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.http.HttpStatus;
 
 @RestController
 public class WinesController {
@@ -32,5 +32,11 @@ public class WinesController {
         wineFromDb.setQty(wineRequest.getQty());
         wineFromDb.setDescription(wineFromDb.getDescription());
         return wineRepository.save(wineFromDb);
+    }
+
+    @DeleteMapping("/wines/{wineId}")
+    public HttpStatus deleteWineById(@PathVariable Long wineId) {
+        wineRepository.delete(wineId);
+        return HttpStatus.OK;
     }
 }
