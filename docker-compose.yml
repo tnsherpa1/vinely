@@ -60,7 +60,7 @@ services:
      - POSTGRES_USER=postgres
      - POSTGRES_DB=vinelydev
   reactdev:
-    image: 'node:8'
+    image: node
     ports:
       - '3000:3000'
     working_dir: /app
