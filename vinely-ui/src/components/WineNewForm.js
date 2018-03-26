@@ -23,34 +23,35 @@ class WineNewForm extends Component {
       <div>
       <h2>Remember your recent favorite wine?</h2>
       <h2>Add it here before you forget...</h2>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <label htmlFor="title">Title</label>
-            <input name="title" type="text" placeholder="Name" onChange={this.handleChange}/>
-          </div>
-          <div>
-            <label htmlFor="description">Description</label>
-            <input name="region" type="text" placeholder="Region" onChange={this.handleChange}/>
-          </div>
-          <div>
-            <label htmlFor="kind">Wine Family</label>
-            <input name="kind" type="text" placeholder="Wine Family" onChange={this.handleChange}/>
-          </div>
-          <div>
-            <label htmlFor="description">Summary</label>
-            <textarea name="description" type="text" placeholder="Description" onChange={this.handleChange}/>
-          </div>
-          <div>
-            <label htmlFor="price">Price</label>
-            <input name="price" type="text" placeholder="Price" onChange={this.handleChange}/>
-          </div>
-          <div>
-            <label htmlFor="qty">Qty</label>
-            <input name="qty" type="text" placeholder="Qty" onChange={this.handleChange}/>
-          </div>
-          <div>
-            <input type="submit" value="Add New Wine"/>
-          </div>
+        <form className="winebox" onSubmit={this.handleSubmit}>
+          <ul className="wrapper">
+            <li className="form-row">
+              <label htmlFor="title">Title</label>
+              <input name="title" type="text" placeholder="Name" onChange={this.handleChange}/>
+            </li>
+            <li className="form-row">
+              <label htmlFor="description">Description</label>
+              <input name="region" type="text" placeholder="Region" onChange={this.handleChange}/>
+            </li>
+            <li className="form-row">
+              <label htmlFor="kind">Wine Family</label>
+              <input name="kind" type="text" placeholder="Wine Family" onChange={this.handleChange}/>
+            </li>
+            <li className="form-row">
+              <label htmlFor="price">Price</label>
+              <input name="price" type="text" placeholder="Price" onChange={this.handleChange}/>
+            </li>
+            <li className="form-row">
+              <label htmlFor="qty">Qty</label>
+              <input name="qty" type="text" placeholder="Qty" onChange={this.handleChange}/>
+            </li>
+            <li className="form-row btn-row">
+              <button type="submit">Add new wine</button>
+            </li>
+          </ul>
+        <div className="summary">
+            <textarea name="description" type="text" placeholder="Describe your wine" onChange={this.handleChange}/>
+        </div>
         </form>
       </div>
     )

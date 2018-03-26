@@ -34,9 +34,9 @@ class WineList extends Component {
   handleWineChange = (event, index) => {
     const attributeToChange = event.target.name
     const newValue = event.target.value
-    //ALL IDEAS
+    //ALL WINES
     const updatedWinesList = [...this.state.wines]
-    //PARTICULAR IDEA
+    //PARTICULAR Wine
     const wineToUpdate = updatedWinesList[index]
     //SET STATE
     wineToUpdate[attributeToChange] = newValue
@@ -53,17 +53,31 @@ class WineList extends Component {
     }
   }
 
+  deleteWine = async (wineId, index) => {
+    try {
+      await axios.delete(`/wines/${wineId}`)
+
+      const updatedWinessList = [...this.state.ideas]
+      updatedWinessList.splice(index, 1)
+      this.setState({ideas: updatedWinessList})
+
+    } catch (error) {
+      console.log(`Error deleting Wines with ID of ${wineId}`)
+      console.log(error)
+    }
+  }
+
   render() {
     const wineComponents = this.state.wines.map((wine, index)=>{
       return <Wine {...wine}
                    key={index}
                    index={index}
                    handleWineChange={this.handleWineChange}
-                   updateWine={this.updateWine} />
+                   updateWine={this.updateWine}
+                   deleteWine={this.deleteWine}/>
     })
     return (
       <div>
-        <h1>Best Selling Wines:</h1>
         {wineComponents}
         <hr/>
         <WineNewForm createWine={this.createWine}/>
