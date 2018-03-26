@@ -4,10 +4,10 @@
   "private": true,
   "proxy": {
     "/wines": {
-      "target": "http://192.168.99.100:8081/"
+      "target": "http://192.168.99.100:8080/wines/"
     },
     "/users": {
-      "target": "http://192.168.99.100:8082/"
+      "target": "http://192.168.99.100:8080/users/"
     }
   },
   "dependencies": {

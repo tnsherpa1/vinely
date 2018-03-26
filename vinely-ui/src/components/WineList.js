@@ -11,7 +11,7 @@ class WineList extends Component {
 
   async componentWillMount() {
     try {
-      const response = await axios.get('/wines')
+      const response = await axios.get(`/wines`)
       this.setState({ wines: response.data })
     } catch(error) {
       console.log('Error retrieving wines!')

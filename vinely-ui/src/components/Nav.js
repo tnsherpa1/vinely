@@ -8,10 +8,10 @@ const Nav = () => {
       <NavLink exact activeClassName='active' to='/'>Home</NavLink>
     </li>
     <li>
-      <NavLink activeClassName='active' to='/wines'>Wines</NavLink>
+      <NavLink activeClassName='active' to='/mywines'>Wines</NavLink>
     </li>
     <li>
-      <NavLink activeClassName='active' to='/users'>Users</NavLink>
+      <NavLink activeClassName='active' to='/myusers'>Users</NavLink>
     </li>
   </ul>
   )
