@@ -1,4 +1,6 @@
 .App {
+  max-width: 1200px;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -7,22 +9,26 @@
   height: 80px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+li {
+    list-style-type: none;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.active {
+    font-weight: bold;
+}
+
+.homePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
