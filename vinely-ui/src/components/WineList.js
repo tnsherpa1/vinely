@@ -57,9 +57,9 @@ class WineList extends Component {
     try {
       await axios.delete(`/wines/${wineId}`)
 
-      const updatedWinessList = [...this.state.ideas]
-      updatedWinessList.splice(index, 1)
-      this.setState({ideas: updatedWinessList})
+      const updatedWinesList = [...this.state.wines]
+      updatedWinesList.splice(index, 1)
+      this.setState({wines: updatedWinesList})
 
     } catch (error) {
       console.log(`Error deleting Wines with ID of ${wineId}`)

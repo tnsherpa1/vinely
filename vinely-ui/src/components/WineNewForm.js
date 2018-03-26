@@ -30,7 +30,7 @@ class WineNewForm extends Component {
               <input name="title" type="text" placeholder="Name" onChange={this.handleChange}/>
             </li>
             <li className="form-row">
-              <label htmlFor="description">Description</label>
+              <label htmlFor="description">Region</label>
               <input name="region" type="text" placeholder="Region" onChange={this.handleChange}/>
             </li>
             <li className="form-row">

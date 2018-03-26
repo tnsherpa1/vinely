@@ -43,7 +43,7 @@ class Wine extends Component {
         </div>
         <div>
           <button className="del"
-            onClick={() => this.props.deleteIdea(this.props.id, this.props.index)}>
+            onClick={() => this.props.deleteWine(this.props.id, this.props.index)}>
             Delete
           </button>
         </div>
