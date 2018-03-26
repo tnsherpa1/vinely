@@ -2,14 +2,7 @@
   "name": "vinely-ui",
   "version": "0.1.0",
   "private": true,
-  "proxy": {
-    "/wines": {
-      "target": "http://192.168.99.100:8080/wines/"
-    },
-    "/users": {
-      "target": "http://192.168.99.100:8080/users/"
-    }
-  },
+  "proxy": "http://192.168.99.100:8080/",
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.2.0",

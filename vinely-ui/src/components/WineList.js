@@ -11,7 +11,7 @@ class WineList extends Component {
 
   async componentWillMount() {
     try {
-      const response = await axios.get(`/wines`)
+      const response = await axios.get(`/wines/wines`)
       this.setState({ wines: response.data })
     } catch(error) {
       console.log('Error retrieving wines!')
@@ -21,7 +21,7 @@ class WineList extends Component {
 
   createWine = async(wine, index) => {
     try {
-      const newWineResponse = await axios.post(`/wines`, wine)
+      const newWineResponse = await axios.post(`/wines/wines`, wine)
       const updatedWinesList = [...this.state.wines]
       updatedWinesList.push(newWineResponse.data)
       this.setState({wines: updatedWinesList})
@@ -46,7 +46,7 @@ class WineList extends Component {
   updateWine = async (index) => {
     try {
       const wineToUpdate = this.state.wines[index]
-      await axios.put(`/wines/${wineToUpdate.id}`, wineToUpdate)
+      await axios.put(`/wines/wines/${wineToUpdate.id}`, wineToUpdate)
     } catch(error) {
       console.log('Error updating wine!')
       console.log(error)
@@ -55,7 +55,7 @@ class WineList extends Component {
 
   deleteWine = async (wineId, index) => {
     try {
-      await axios.delete(`/wines/${wineId}`)
+      await axios.delete(`/wines/wines/${wineId}`)
 
       const updatedWinesList = [...this.state.wines]
       updatedWinesList.splice(index, 1)

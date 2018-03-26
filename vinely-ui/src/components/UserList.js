@@ -7,7 +7,7 @@ class User extends Component {
   }
   async componentDidMount(){
     try {
-      const response = await(axios.get('/users'))
+      const response = await(axios.get('/users/users'))
       this.setState({users: response.data})
     } catch(error) {
       console.log('Failed to retrieve users!')
