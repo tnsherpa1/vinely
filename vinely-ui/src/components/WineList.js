@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import Wine from './Wine'
 
 
-class Wine extends Component {
+class WineList extends Component {
 
   state = {
     wines: []
@@ -16,18 +17,24 @@ class Wine extends Component {
       console.log('Error retrieving wines!')
       console.log(error)
     }
-
   }
+
   render() {
+    const wineComponents = this.state.wines.map((wine)=>{
+      return <Wine title={wine.title}
+                   region={wine.region}
+                   type={wine.kind}
+                   description={wine.description}
+                   quantity={wine.qty}
+                   price={wine.price}/>
+    })
     return (
       <div>
-        <h1>Welcome to Vinely!</h1>
-        {
-        JSON.stringify(this.state.wines)
-        }
+        <h1>Best Selling Wines:</h1>
+        {wineComponents}
       </div>
     )
   }
 }
 
-export default Wine;
+export default WineList;
